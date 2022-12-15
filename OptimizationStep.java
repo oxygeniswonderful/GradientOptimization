@@ -86,8 +86,8 @@ public class OptimizationStep {
         newPoint.add(current_y-step_y);
         newPoint.add(sumOfGrad_x);
         newPoint.add(sumOfGrad_y);
-        newPoint.add(sumOfGradCorrected_x);
-        newPoint.add(sumOfGradCorrected_y);
+        newPoint.add(sumOfGradSquared_x);
+        newPoint.add(sumOfGradSquared_y);
         return newPoint;
     }
 
@@ -106,9 +106,6 @@ public class OptimizationStep {
         step = matrix.matrixMultiplication(grad, matrix.reverseMatrix(hessian));
         step_x = step[0][0];
         step_y = step[0][1];
-
-        System.out.println("step_x = " + step_x);
-        System.out.println("step_y = " + step_y);
 
         newPoint.add(current_x-step_x);
         newPoint.add(current_y-step_y);

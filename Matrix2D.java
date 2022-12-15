@@ -19,13 +19,15 @@ public class Matrix2D implements Matrix{
 
     @Override
     public Double[][] matrixMultiplication(Double[][] matrix1, Double[][] matrix2) {
-        Double[][] result = new Double[2][2];
+        Double[][] result = {
+            {0.0, 0.0},
+            {0.0, 0.0},
+        };
 
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
                 for (int k = 0; k < 2; k++) {
                     result[i][j] += matrix1[i][k] * matrix2[k][j];
-                    System.out.println(result[i][j]);
                 }
             }
         }
