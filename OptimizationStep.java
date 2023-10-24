@@ -11,8 +11,8 @@ public class OptimizationStep {
         return newPoint;
     }
 
-    public ArrayList<Double> gradientMomentumStep(double current_x, double current_y, double grad_x, double grad_y, double lr, double beta,
-                                              double step_x, double step_y) {
+    public ArrayList<Double> gradientMomentumStep(double current_x, double current_y, double grad_x, double grad_y, double lr,
+                                                  double beta, double step_x, double step_y) {
         ArrayList<Double> newPoint = new ArrayList<>();
         step_x = step_x*beta + lr*grad_x;
         step_y = step_y*beta + lr*grad_y;
